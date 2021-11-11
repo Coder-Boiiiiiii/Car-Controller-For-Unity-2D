@@ -20,8 +20,10 @@ public class Car_Controller_2D : MonoBehaviour
     private float MX;
 
     public void Update(){
+        //Horizontal Input
         MX = Input.GetAxis("Horizontal");
 
+        //Reverse
         if(MX < 0){
             for(int i = 0; i < Wheel_Joints.Count; i++){
                 JointMotor2D motor;
@@ -32,6 +34,7 @@ public class Car_Controller_2D : MonoBehaviour
             }
         }
 
+        //Move Forward
         else if(MX > 0){
             for(int i = 0; i < Wheel_Joints.Count; i++){
                 JointMotor2D motor;
@@ -42,6 +45,7 @@ public class Car_Controller_2D : MonoBehaviour
             }
         }
 
+        //Stop when not moving
         else{
             for(int i = 0; i < Wheel_Joints.Count; i++){
                 JointMotor2D motor;
@@ -51,6 +55,7 @@ public class Car_Controller_2D : MonoBehaviour
             }
         }
 
+        //Brake
         foreach(KeyCode K in Brake_Keys){
             if(Input.GetKey(K)){
                 for(int i = 0; i < Wheel_Joints.Count; i++){
