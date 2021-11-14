@@ -7,3 +7,5 @@ This is a car controller for Unity 2D
 
 1. Basic Movement
 2. Braking
+3. Camera Controller
+4. Audio (Engine Audio)
